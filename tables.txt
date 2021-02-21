@@ -1,0 +1,51 @@
+
+
+
+CREATE TABLE company(
+company_id INT PRIMARY KEY,
+company_name VARCHAR(50),
+company_location VARCHAR(50),
+company_direction VARCHAR(50)
+)
+
+CREATE TABLE employee(
+employee_id INT PRIMARY KEY,
+employee_first_name VARCHAR(50),
+employee_second_name VARCHAR(50),
+employee_age INT,
+employee_salary INT,
+company_id INT,
+FOREIGN KEY(company_id) REFERENCES company(company_id)
+)
+CREATE TABLE engineer(
+engineer_id INT PRIMARY KEY,
+engineer_first_name VARCHAR(50),
+engineer_second_name VARCHAR(50),
+engineer_age INT,
+engineer_salary INT,
+engineer_fix_diagnostics VARCHAR(50),
+engineer_customization VARCHAR(50),
+company_id INT,
+FOREIGN KEY(company_id) REFERENCES company(company_id)
+)
+CREATE TABLE designer(
+designer_id INT PRIMARY KEY,
+designer_first_name VARCHAR(50),
+designer_second_name VARCHAR(50),
+designer_age INT,
+designer_salary INT,
+designer_prototyping VARCHAR(50),
+designer_mindmap VARCHAR(50),
+company_id INT,
+FOREIGN KEY(company_id) REFERENCES company(company_id)
+)
+CREATE TABLE managers(
+manager_id int PRIMARY KEY,
+manager_firstname VARCHAR(50),
+manager_secondname VARCHAR(50),
+manager_phonenumber VARCHAR(50),
+manager_salary INT,
+company_id INT,
+FOREIGN KEY(company_id) REFERENCES company(company_id)
+
+)
